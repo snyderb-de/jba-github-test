@@ -1,0 +1,12 @@
+name: commit_checkout
+on: [push]
+jobs:
+  external-workflow:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout 
+        uses: actions/checkout@v4
+        with:
+          repository: 3eb718710f20d7df6874acdc41e189a2ae4182f5
+      - name: Greetings
+        run: echo "$(<greeting.txt)"
